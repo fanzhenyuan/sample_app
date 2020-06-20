@@ -79,4 +79,9 @@ class UserTest < ActiveSupport::TestCase
     @user.password = @user.password_confirmation = "a" * 5
     assert_not @user.valid?
   end
+  
+  
+  test "authenticate? return false when nil" do
+    assert_not @user.authenticated?('')
+  end
 end
